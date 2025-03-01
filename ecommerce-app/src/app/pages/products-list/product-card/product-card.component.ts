@@ -22,6 +22,7 @@ import { CartService } from '../../../services/cart.service';
             label="Add to Cart"
             class="mt-3"
             (btnClicked)="cartService.addToCart(product())"
+            [isBtnDisabled]="!product().stock"
           />
         </div>
         <span
