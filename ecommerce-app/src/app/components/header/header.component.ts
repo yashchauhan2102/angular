@@ -13,9 +13,9 @@ import { RouterLink } from '@angular/router';
       <button class="text-xl" routerLink="/">{{ headerTitle() }}</button>
       <app-primary-button
         [label]="cartLabel() + ' (' + cartService.cart().length + ')'"
-        (btnClicked)="showBtnClicked()"
         routerLink="/cart"
       />
+      <!-- (btnClicked)="showBtnClicked()" -->
     </div>
   `,
   styles: `
@@ -24,8 +24,8 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
   headerTitle = signal<string>('My Store');
   cartLabel = signal<string>('Cart');
-  showBtnClicked() {
-    console.log('clicked');
-  }
+  // showBtnClicked() {
+  //   console.log('clicked');
+  // }
   cartService = inject(CartService);
 }
