@@ -22,15 +22,15 @@ import { CartService } from '../../../services/cart.service';
             label="Add to Cart"
             class="mt-3"
             (btnClicked)="cartService.addToCart(product())"
-            [isBtnDisabled]="!product().stock"
+            [isBtnDisabled]="!product().rating.count"
           />
         </div>
         <span
           class="absolute top-2 right-3 text-sm font-bold"
-          [class]="product().stock ? 'text-green-500' : 'text-red-500'"
+          [class]="product().rating.count ? 'text-green-500' : 'text-red-500'"
         >
-          @if (product().stock) {
-          {{ product().stock }} left } @else { Out of stock }
+          @if (product().rating.count) {
+          {{ product().rating.count }} left } @else { Out of stock }
         </span>
       </div>
     </div>
